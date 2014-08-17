@@ -1,0 +1,22 @@
+Hi!
+
+(must be installed Qt 4.7 and later )
+
+Building:
+	$ cd xor/
+	$ qmake
+	$ make 
+	$ cd ../hackxor
+	$ qmake
+	$ make
+
+
+for crypt your can use application xor:
+./xor <input file> <key file> <output file>
+
+for hack xor:
+./hackxor <input file> <length key> <alphabet key file> <alphabet text file>
+
+
+
+
