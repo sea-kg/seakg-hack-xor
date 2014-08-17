@@ -1,0 +1,15 @@
+Exclusive disjunction or exclusive is a logical operation that
+outputs true whenever both inputs differ (one is true, the other is false).
+It is symbolized by the prefix operator J and by the infix operators XOR,
+EOR, EXOR. The opposite of XOR is logical biconditional, which outputs
+true whenever both inputs are the same.
+
+It gains the name "exclusive or" because the meaning of "or" is
+ambiguous when both operands are true; exclusive or excludes that case.
+This is sometimes thought of as "one or the other but not both".
+This could be written as A or B but not A & B.
+
+More generally, XOR is true whenever an odd number of inputs is true.
+A chain of XORs-a XOR b XOR c XOR d (and so on)-is true whenever an
+odd number of the inputs are true and is false whenever an even number
+of inputs are true.
