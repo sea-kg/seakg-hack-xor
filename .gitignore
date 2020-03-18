@@ -1,3 +1,9 @@
+.wsjcpp/*
+seakg-hack-xor
+tmp/*
+.vscode/*
+.logs/*
+
 # Compiled Object files
 *.slo
 *.lo

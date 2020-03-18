@@ -1,0 +1,33 @@
+name: "seakg-hack-xor"
+version: "v0.0.1"
+cmake_minimum_required: "3.0"
+cmake_cxx_standard: "11"
+description: try hack xor (crypto algorithm)
+
+authors:
+  - name: "Evgenii Sopov"
+    email: "mrseakg@gmail.com"
+
+origins:
+  - address: "https://sea-kg.com/wsjcpp-package-registry/"
+    type: "package-registry"
+
+keywords:
+  - "c++"
+  - "hack"
+  - "xor"
+
+dependencies:
+  - name: "wsjcpp-core"
+    version: "v0.0.8"
+    url: "https://github.com/wsjcpp/wsjcpp-core:master"
+    origin: "https://github.com/"
+    installation-dir: "./src.wsjcpp/wsjcpp_core"
+
+distribution:
+  - source-file: "src/seakg_hack_xor.h"
+    target-file: "seakg_hack_xor.h"
+    type: "source-code"
+  - source-file: "src/seakg_hack_xor.cpp"
+    target-file: "seakg_hack_xor.cpp"
+    type: "source-code"
