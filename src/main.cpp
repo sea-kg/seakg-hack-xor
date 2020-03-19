@@ -8,7 +8,8 @@ void printUsage(const std::string &sExecName) {
     std::cout << "\n  Usage: \n"
         << "    Crypt: " << sExecName << " xor orig_filepath key_filepath crypted_filepath \n"
         << "    Decrypt: " << sExecName << " xor crypted_filepath key_filepath decrypted_filepath \n"
-        // << "    Try hack: " << sExecName << " hack crypted_filepath ??? \n"
+        << "    Hack: " << sExecName << " hack crypted_filepath key_length key_alphabet_filepath text_alphabet_filepath\n"
+        << "    Generate Key Alphabets: " << sExecName << " generate to_dirpath\n"
         << "\n"
     ;
 }
@@ -35,12 +36,35 @@ int main(int argc, const char* argv[]) {
 
     std::string sSubCommand = vArgs[1];
 
-    if (sSubCommand == "xor") {
+    if (sSubCommand == "help" || sSubCommand == "--help" || sSubCommand == "-h") {
+        printUsage(sExecName);
+        return 0;
+    } else if (sSubCommand == "generate") {
+        if (vArgs.size() != 3) {
+            printUsage(sExecName);
+            return -1;
+        } else {
+            if (!SeakgHackXor::generateBasicFilesWithAlphabets(vArgs[2])) {
+                return -1;
+            }
+        }
+    } else if (sSubCommand == "xor") {
         if (vArgs.size() != 5) {
             printUsage(sExecName);
             return -1;
         } else {
             if (!SeakgHackXor::makeFileXor(vArgs[2],vArgs[3],vArgs[4])) {
+                return -1;
+            }
+        }
+    } else if (sSubCommand == "hack") {
+        if (vArgs.size() != 6) {
+            printUsage(sExecName);
+            return -1;
+        } else {
+            WSJCppLog::info(TAG, "Hello! It's program for hack xor.");
+            int nKeyLength = atoi(vArgs[3].c_str());
+            if (!SeakgHackXor::hackFileXor(vArgs[2], nKeyLength, vArgs[4], vArgs[5])) {
                 return -1;
             }
         }

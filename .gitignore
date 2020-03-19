@@ -3,6 +3,7 @@ seakg-hack-xor
 tmp/*
 .vscode/*
 .logs/*
+tmp.data/*
 
 # Compiled Object files
 *.slo
